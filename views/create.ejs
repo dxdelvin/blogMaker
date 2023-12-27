@@ -1,0 +1,24 @@
+<%-include("./base/header.ejs")%>
+<body>
+<%-include("./base/navigation.ejs")%>
+<form action="/homepage" method="post">
+
+    <div class="mb-3">
+        <label for="title" class="form-label">Your Blog Title:</label>
+        <input type="text" class="form-control" name="title">
+        <div id="help" class="form-text">Make Your Title Interesting</div>
+    </div>
+    <div class="mb-3">
+        <label  class="form-label">Write Your Blog Content:</label>
+        <textarea name="content" rows="10" type="password" class="form-control"></textarea>
+    </div>
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check to accept T&C</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+</body>
+</html>
+<%-include("./base/footer.ejs")%>

@@ -1,0 +1,23 @@
+<%-include("./base/header.ejs")%>
+<body>
+    <%-include("./base/navigation.ejs")%>
+    <div class="container">
+        <h1>Welcome To Your Blog Page</h1>
+    </div>
+    <div class="container-blog">
+        <%if (locals.blogs){%>
+            <% for (const [k, v] of Object.entries(blogs)) { %>
+                <a class="blog-list btn btn-link text-decoration-none text-dark" href="blogs/<%-k%>"><%= k %></a>
+                <p><%= v.slice(0,200) %>...</p>
+              <% } %>
+          <%}else{%>
+            <div class="d-flex justify-content-center">
+                <a href="./create"><button class="btn btn-lg btn-light me-2 c" type="button">Create Your First Blog</button></a>
+            </div>
+            <div id="help" class="d-flex justify-content-center form-text">Click It to Create Your First Blog</div>
+            <%}%>
+              
+    </div>
+</body>
+</html>
+<%-include("./base/footer.ejs")%>
