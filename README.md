@@ -1,8 +1,8 @@
-
-```markdown
 # Blog Maker
 
 Welcome to Blog Maker, a simple web application that allows you to create, view, edit, and delete your blogs.
+```markdown
+
 
 ## Getting Started
 
