@@ -16,10 +16,35 @@ app.get('/create',(req,res)=>{
     res.render("create.ejs")
 })
 
+app.post('/updatePage',(req,res)=>{
+  let title = req.body.title
+  let blogName = req.body.blogName;
+  console.log(blogName);
+  let content = req.body.content
+  blogs[title]=content;
+  delete blogs[blogName]
+  res.render("homepage.ejs",{blogs:blogs})
+})
+
 app.post('/homepage',(req,res)=>{
   let title = req.body.title
   let content = req.body.content
   blogs[title]=content;
+  res.render("homepage.ejs",{blogs:blogs})
+})
+
+app.post('/update',(req,res)=>{
+  const updateType = req.body.action;
+  // console.log(updateType)
+  const blogtodelete = req.body.blogName
+  const blogCont = req.body.blogContent
+  if (updateType === "delete"){
+    // console.log(blogtodelete)
+    delete blogs[blogtodelete]
+    res.redirect("/")
+  }else{
+    res.render('./update.ejs',{name:blogtodelete,content:blogCont})
+  }
   res.render("homepage.ejs",{blogs:blogs})
 })
 
@@ -34,6 +59,7 @@ app.get('/blogs/:blogName', (req, res) => {
     res.status(404).send('Blog Content Data not found');
   }
 });
+
 
 app.listen(port, () => {
   console.log(`Listening to localhost:${port}`)

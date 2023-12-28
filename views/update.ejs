@@ -1,0 +1,20 @@
+<%-include("./base/header.ejs")%>
+<body>
+<%-include("./base/navigation.ejs")%>
+<form action="/homepage" method="post">
+    <input type="hidden" name="blogName" value="<%= name %>" id="blogN">
+    <div class="mb-3">
+        <label for="title" class="form-label">Change Your Blog Title</label>
+        <input type="text" value="<%=name%>" class="form-control" name="title">
+        <div id="help" class="form-text">Edit Your Data</div>
+    </div>
+    <div class="mb-3">
+        <label  class="form-label">Edit Your Blog Content:</label>
+        <textarea name="content" rows="10" type="password" class="form-control"><%=content%></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Update Blog</button>
+
+</form>
+</body>
+</html>
+<%-include("./base/footer.ejs")%>

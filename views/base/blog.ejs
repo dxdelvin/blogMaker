@@ -3,5 +3,13 @@
     <%-include("navigation.ejs")%>
     <h1 class="container"><%-blogName%></h1>
     <div class="container"><%-blogContent%></div>
+    <div class="d-flex justify-content-center">
+        <form action="../../update" method="post">
+            <input type="hidden" name="blogName" value="<%- blogName %>">
+            <input type="hidden" name="blogContent" value="<%- blogContent %>">
+            <button name="action" value="update" class="btn btn-info me-2 mt-2 c" type="submit">Update</button>
+            <button name="action" value="delete" class="btn btn-danger me-2 mt-2 c" type="submit">Delete</button>
+        </form>
+    </div>
 </body>
 <%-include("footer.ejs")%>
