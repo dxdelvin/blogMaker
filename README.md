@@ -66,3 +66,11 @@ Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
 
    - Click on the Blog You want to Delete and it will open a new page
    - Click the "Delete" button next to the blog you want to delete.
+
+
+# Future & Contributions:
+- Design and Animations can Be updated
+- Can make login access so it can be private
+
+# Contact
+Email: dxdelvin@gmail.com
